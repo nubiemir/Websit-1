@@ -1,19 +1,21 @@
 import React from "react";
-import AboutPage from "./pages/aboutpage";
-import ServicePage from "./pages/servicepage";
-import FaqPage from "./pages/faqpage";
 import GlobalStyle from "./components/GlobalStyled";
 import Nav from "./components/nav";
-
+import ContactUs from "./pages/ContactPage";
+import OurWork from "./pages/OurWorkPage";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/homepage";
 function App() {
   return (
-    <>
+    <div className="app">
       <GlobalStyle />
       <Nav />
-      <AboutPage />
-      <ServicePage />
-      <FaqPage />
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="work" element={<OurWork />} />
+        <Route path="contact" element={<ContactUs />} />
+      </Routes>
+    </div>
   );
 }
 
